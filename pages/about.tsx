@@ -14,7 +14,10 @@ import {
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { ImagesSlider } from "@/components/ui/images-slider";
 import { SiInstagram, SiLinkedin, SiReact, SiX } from "react-icons/si";
+<<<<<<< Updated upstream
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+=======
+>>>>>>> Stashed changes
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +36,7 @@ const AboutPage = () => {
       Icon: SiLinkedin,
       link: "www.sdgjvh.com",
     },
+<<<<<<< Updated upstream
     {
       Icon: SiX,
       link: "www.sdgjvh.com",
@@ -47,10 +51,19 @@ const AboutPage = () => {
     "url_to_image5.jpg",
   ];
   
+=======
+
+    {
+      Icon: SiX,
+      link: "www.sdgjvh.com",
+    },
+  ];
+>>>>>>> Stashed changes
 
   return (
     <div className="flex flex-col overflow-x-hidden">
       <NavBar />
+<<<<<<< Updated upstream
       <div className="mt-16">
         <Aboutgdsc />
         <ImagesSlider className="h-[40rem]" images={images}>
@@ -110,6 +123,65 @@ const AboutPage = () => {
         <div className="max-w-5xl mx-auto px-auto">
           <HoverEffect items={skills} />
         </div>
+=======
+      <Aboutgdsc />
+      <ImagesSlider className="h-[40rem]" images={images}>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: -80,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="z-50 flex flex-col justify-center items-center"
+        >
+          <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+          <div className="flex flex-col md:flex-row justify-end items-center md:justify-center">
+        <button className=" text-white h-20 ease-in-out duration-300 z-20 w-64 gradColor font-medium text-md md:text-xl rounded-sm md:my-8 my-4 mx-4">
+          Register
+        </button>
+      </div>
+          </motion.p>
+        </motion.div>
+      </ImagesSlider>{" "}
+      
+      <div className="max-w-5xl mx-auto px-10 mt-8 "></div>
+      <h2 className="text-center font-medium text-2xl ">FAQ</h2>
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full font-medium  container md:pr-20 pr-5 md:pl-20 pl-5 pt-1 pb-10"
+      >
+        <AccordionItem value="item-1">
+          <AccordionTrigger className="text-xl">Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Is it styled?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It comes with default styles that matches the other
+            components&apos; aesthetic.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Is it animated?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It&apos;s animated by default, but you can disable it if you
+            prefer.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      <h2 className="text-center font-medium text-2xl">Contact us</h2>
+      <div className="max-w-5xl mx-auto px-auto">
+        <HoverEffect items={skills} />
+>>>>>>> Stashed changes
       </div>
       <Footer />
     </div>

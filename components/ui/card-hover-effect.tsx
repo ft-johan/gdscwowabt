@@ -20,13 +20,14 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-3 py-5",
+        "grid grid-cols-3 py-5",
         className
       )}
     >
       {items.map((item, idx) => {
         const Icon = item.Icon;
 
+<<<<<<< Updated upstream
         return (
           <Link
             href={item?.link}
@@ -53,6 +54,34 @@ export const HoverEffect = ({
               )}
             </AnimatePresence>
             <div className="rounded-lg w-full p-4 overflow-hidden bg-black  relative transition-all z-20 duration-500">
+=======
+        return(
+        <Link
+          href={item?.link}
+          key={item?.link}
+          className="relative group  block p-2 h-full w-full"
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <AnimatePresence>
+            {hoveredIndex === idx && (
+              <motion.span
+                className="absolute inset-0 h-full w-full bg-black dark:bg-slate-800/[0.8] block  rounded-lg"
+                layoutId="hoverBackground"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.15 },
+                }}
+                exit={{
+                  opacity: 0,
+                  transition: { duration: 0.1, delay: 0.3 },
+                }}
+              />
+            )}
+          </AnimatePresence>
+          <div className="rounded-lg w-full p-4 overflow-hidden bg-transparent  relative transition-all z-20 duration-500">
+>>>>>>> Stashed changes
               <div className="py-2 z-50 relative space-y-5">
                 <Icon className="w-8 h-8 mx-auto" />
 
